@@ -174,13 +174,14 @@ import {
                     </FormControl>
   
                     <Button
+                      width={'full'}
                       colorScheme="blue"
                       bg="blue.400"
                       color="white"
                       _hover={{
                         bg: 'blue.500',
                       }}
-                      isFullWidth>
+                      >
                       Send Message
                     </Button>
                   </VStack>

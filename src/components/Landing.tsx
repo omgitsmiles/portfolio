@@ -12,10 +12,21 @@ import {
     createIcon,
     IconProps,
     useColorModeValue,
-  } from '@chakra-ui/react';
+    ScaleFade,
+  } from '@chakra-ui/react'
+  import { useRef } from 'react'
+  import { useInViewport } from 'react-in-viewport'
   import moonshot from '../assets/moonshot.jpeg'
   
   export default function CallToActionWithVideo() {
+    const ref = useRef(null)
+    const { enterCount } = useInViewport(
+        ref,
+        { rootMargin: "-300px" },
+        { disconnectOnLeave: false },
+        {}
+      )
+
     return (
       <Container maxW={'7xl'}>
         <Stack
@@ -78,19 +89,12 @@ import {
               rounded={'2xl'}
               boxShadow={'2xl'}
               width={'full'}
-              overflow={'hidden'}>
-              {/* <IconButton
-                aria-label={'Play Button'}
-                variant={'ghost'}
-                _hover={{ bg: 'transparent' }}
-                icon={<PlayIcon w={12} h={12} />}
-                size={'lg'}
-                color={'white'}
-                position={'absolute'}
-                left={'50%'}
-                top={'50%'}
-                transform={'translateX(-50%) translateY(-50%)'}
-              /> */}
+              overflow={'hidden'}
+              ref={ref}>
+             <ScaleFade
+                initialScale={0.8}
+                in={enterCount > 0}
+                whileHover={{ scale: 1.1 }}>
               <Image
                 alt={'Hero Image'}
                 fit={'cover'}
@@ -98,7 +102,8 @@ import {
                 w={'100%'}
                 h={'100%'}
                 src={moonshot}
-              />
+                />
+            </ScaleFade>
             </Box>
           </Flex>
         </Stack>
