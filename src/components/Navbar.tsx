@@ -16,7 +16,7 @@ import {
   useColorMode,
   Center,
 } from '@chakra-ui/react';
-import profilepic from '../assets/ProfessionProfilePicture.jpeg'
+import avatar from '../assets/paoloavatar.jpeg'
 import { MoonIcon, SunIcon } from '@chakra-ui/icons';
 
 const NavLink = ({ children }: { children: ReactNode }) => (
@@ -42,11 +42,9 @@ export default function Nav() {
         <Flex h={16} alignItems={'center'} justifyContent={'space-between'}>
           <Box fontFamily={'sans-serif'}
                fontSize={'xl'}
-               as='i'>
+               as='b'>
             Paolo Alberca
-            {/* <Box fontFamily={'sans-serif'}
-                 fontSize={'sm'}
-                 as='sub'>NYC</Box> */}
+
           </Box>
           <Flex alignItems={'center'}>
             <Stack direction={'row'} spacing={7}>
@@ -63,7 +61,7 @@ export default function Nav() {
                   minW={0}>
                   <Avatar
                     size={'sm'}
-                    src={profilepic}
+                    src={avatar}
                   />
                 </MenuButton>
                 <MenuList alignItems={'center'}>
@@ -71,7 +69,7 @@ export default function Nav() {
                   <Center>
                     <Avatar
                       size={'2xl'}
-                      src={profilepic}
+                      src={avatar}
                     />
                   </Center>
                   <br />
