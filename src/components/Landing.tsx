@@ -94,7 +94,7 @@ import {
              <ScaleFade
                 initialScale={0.8}
                 in={enterCount > 0}
-                whileHover={{ scale: 1.1 }}>
+                whileHover={{ scale: 1.4 }}>
               <Image
                 alt={'Hero Image'}
                 fit={'cover'}

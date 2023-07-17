@@ -3,7 +3,6 @@ import {
   Box,
   Flex,
   Avatar,
-  Link,
   Button,
   Menu,
   MenuButton,
@@ -15,9 +14,13 @@ import {
   Stack,
   useColorMode,
   Center,
+  Link
 } from '@chakra-ui/react';
+// import { Link } from 'react-router-dom';
+import { SiAltiumdesigner } from 'react-icons/si' 
 import avatar from '../assets/paoloavatar.jpeg'
 import { MoonIcon, SunIcon } from '@chakra-ui/icons';
+import Contact from './Contact.tsx'
 
 const NavLink = ({ children }: { children: ReactNode }) => (
   <Link
@@ -40,11 +43,8 @@ export default function Nav() {
     <>
       <Box bg={useColorModeValue('gray.100', 'gray.900')} px={4}>
         <Flex h={16} alignItems={'center'} justifyContent={'space-between'}>
-          <Box fontFamily={'sans-serif'}
-               fontSize={'xl'}
-               as='b'>
-            Paolo Alberca
-
+          <Box>
+        <SiAltiumdesigner />
           </Box>
           <Flex alignItems={'center'}>
             <Stack direction={'row'} spacing={7}>
@@ -80,7 +80,7 @@ export default function Nav() {
                   <MenuDivider />
                   <MenuItem>My Projects</MenuItem>
                   <MenuItem>About Me</MenuItem>
-                  <MenuItem>Contact</MenuItem>
+                  <Link to={<Contact />}><MenuItem>Contact</MenuItem></Link>
                 </MenuList>
               </Menu>
             </Stack>

@@ -18,7 +18,7 @@ import {
     VStack,
   } from '@chakra-ui/react';
   import React from 'react';
-  import { BsGithub, BsLinkedin, BsPerson, BsTwitter } from 'react-icons/bs';
+  import { BsGithub, BsLinkedin, BsPerson, BsInstagram } from 'react-icons/bs';
   import { MdEmail, MdOutlineEmail } from 'react-icons/md';
   
   const confetti = {
@@ -106,10 +106,10 @@ import {
   
                   <Link href="#">
                     <IconButton
-                      aria-label="twitter"
+                      aria-label="instagram"
                       variant="ghost"
                       size="lg"
-                      icon={<BsTwitter size="28px" />}
+                      icon={<BsInstagram size="28px" />}
                       _hover={{
                         bg: 'blue.500',
                         color: useColorModeValue('white', 'gray.700'),
