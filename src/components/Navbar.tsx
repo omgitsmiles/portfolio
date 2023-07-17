@@ -80,7 +80,8 @@ export default function Nav() {
                   <MenuDivider />
                   <MenuItem>My Projects</MenuItem>
                   <MenuItem>About Me</MenuItem>
-                  <Link to={<Contact />}><MenuItem>Contact</MenuItem></Link>
+                  {/* figure out link problem between roouter vs chakra ui */}
+                  <MenuItem>Contact</MenuItem>
                 </MenuList>
               </Menu>
             </Stack>
