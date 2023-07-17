@@ -40,6 +40,7 @@ const settings = {
 interface StatsCardProps {
   title: string;
   stat: string;
+  repo: string;
 }
 
 
@@ -93,7 +94,7 @@ export default function CaptionCarousel() {
   ];
 
   function StatsCard(props: StatsCardProps) {
-    const { title, stat } = props;
+    const { title, stat, repo } = props;
     return (
       <Stat
         px={{ base: 4, md: 8 }}
@@ -111,10 +112,8 @@ export default function CaptionCarousel() {
           {stat}
         </StatNumber>
         <br />
-        {cards.map((card, index) => (
-        <Link href={card.repo}>
+        <Link href={repo}>
         <Button
-          key={index}
           bg={'teal.300'}
           rounded={'full'}
           color={'whiteAlpha.700'}
@@ -122,7 +121,6 @@ export default function CaptionCarousel() {
           Github Repo
         </Button>
         </Link>
-    ))}
       </Stat>
     );
   }
@@ -191,16 +189,7 @@ export default function CaptionCarousel() {
                 position="absolute"
                 top="50%"
                 transform="translate(0, -50%)">
-                {/* <Heading color={'white.400'}
-                  fontWeight={700}
-                  lineHeight={1.2}
-                  fontSize={useBreakpointValue({ base: '3xl', md: '4xl' })}>
-                  {card.title}
-                </Heading>
-                <Text fontSize={{ base: 'md', lg: 'lg' }} color="black.400">
-                  {card.text}
-                </Text> */}
-                <StatsCard title={card.title} stat={card.text}/>
+                <StatsCard title={card.title} stat={card.text} repo={card.repo}/>
               </Stack>
             </Container>
           </Box>
