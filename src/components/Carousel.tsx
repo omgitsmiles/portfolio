@@ -6,7 +6,14 @@ import {
   Stack,
   Heading,
   Text,
+  Link,
+  Button,
+  Stat,
+  StatLabel,
+  StatNumber,
+  useColorModeValue,
   Container,
+  filter,
 } from '@chakra-ui/react';
 // Here we have used react-icons package for the icons
 import { BiLeftArrowAlt, BiRightArrowAlt } from 'react-icons/bi';
@@ -30,6 +37,12 @@ const settings = {
   slidesToScroll: 1,
 };
 
+interface StatsCardProps {
+  title: string;
+  stat: string;
+}
+
+
 export default function CaptionCarousel() { 
   // As we have used custom buttons, we need a reference variable to
   // change the state
@@ -42,38 +55,85 @@ export default function CaptionCarousel() {
 
   // This list contains all the data for carousels
   // This can be static or loaded from a server
+  interface cards {
+    title: string;
+    text: string;
+    image: string;
+    repo: string;
+  }
+
   const cards = [
     {
       title: 'Ullr',
       text:
-        "The project board is an exclusive resource for contract work. It's perfect for freelancers, agencies, and moonlighters.",
+        "Taking my love for the Strava application and applied my version of the fitness tracker app with added social media functionality.",
       image: `${ULogin}`,
+      repo: "https://github.com/omgitsmiles/Ullr"
     },
     {
       title: 'BookEnds',
       text:
-        "The project board is an exclusive resource for contract work. It's perfect for freelancers, agencies, and moonlighters.",
+        "Taking a simple idea of creating a place for users to share their books and thoughts in one place through BookEnds.",
       image: `${BookEnds}`,
+      repo: "https://github.com/omgitsmiles/BookEnds"
     },
     {
       title: 'Creed Thoughts',
       text:
-        "The project board is an exclusive resource for contract work. It's perfect for freelancers, agencies, and moonlighters.",
+        "From the popular show The Office, we take the character Creed Bratton and replicate his Blog for the user.",
       image: `${Creed}`,
+      repo: "https://github.com/omgitsmiles/CreedThoughts"
     },{
         title: 'AfterFlea aiOS',
         text:
-          "The project board is an exclusive resource for contract work. It's perfect for freelancers, agencies, and moonlighters.",
+          "Landing page for AfterFlea, a mobile application that allows users to buy and sell items locally.",
         image: `${af}`,
+        repo: "https://github.com/omgitsmiles/Ullr"
       }
   ];
+
+  function StatsCard(props: StatsCardProps) {
+    const { title, stat } = props;
+    return (
+      <Stat
+        px={{ base: 4, md: 8 }}
+        py={'5'}
+        shadow={'xl'}
+        border={'1px solid'}
+        borderColor={useColorModeValue('gray.800', 'gray.500')}
+        backgroundColor={useColorModeValue('gray.50', 'gray.900')}
+        rounded={'lg'}
+        >
+        <StatLabel fontWeight={'large'} isTruncated>
+          {title}
+        </StatLabel>
+        <StatNumber fontSize={'2xl'} fontWeight={'medium'}>
+          {stat}
+        </StatNumber>
+        <br />
+        {cards.map((card, index) => (
+        <Link href={card.repo}>
+        <Button
+          key={index}
+          bg={'teal.300'}
+          rounded={'full'}
+          color={'whiteAlpha.700'}
+          _hover={{ bg: 'teal.500' }}>
+          Github Repo
+        </Button>
+        </Link>
+    ))}
+      </Stat>
+    );
+  }
 
   return (
     <Box
       position={'relative'}
-      height={'600px'}
+      height={'100vh'}
       width={'full'}
-      overflow={'hidden'}>
+      overflow={'hidden'}
+      >
       {/* CSS files for react-slick */}
       <link
         rel="stylesheet"
@@ -117,10 +177,11 @@ export default function CaptionCarousel() {
             key={index}
             height={'6xl'}
             position="relative"
-            backgroundPosition="center"
+            backgroundPosition="center center"
             backgroundRepeat="no-repeat"
             backgroundSize="cover"
-            backgroundImage={`url(${card.image})`}>
+            backgroundImage={card.image}
+            >
             {/* This is the block you need to change, to customize the caption */}
             <Container size="container.lg" height="600px" position="relative">
               <Stack
@@ -130,12 +191,16 @@ export default function CaptionCarousel() {
                 position="absolute"
                 top="50%"
                 transform="translate(0, -50%)">
-                <Heading fontSize={{ base: '3xl', md: '4xl', lg: '5xl' }} color="teal.400">
+                {/* <Heading color={'white.400'}
+                  fontWeight={700}
+                  lineHeight={1.2}
+                  fontSize={useBreakpointValue({ base: '3xl', md: '4xl' })}>
                   {card.title}
                 </Heading>
                 <Text fontSize={{ base: 'md', lg: 'lg' }} color="black.400">
                   {card.text}
-                </Text>
+                </Text> */}
+                <StatsCard title={card.title} stat={card.text}/>
               </Stack>
             </Container>
           </Box>
