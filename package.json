@@ -2,6 +2,8 @@
   "name": "portfolio",
   "private": false,
   "homepage": "https://omgitsmiles.github.io/portfolio/",
+  "predeploy": "npm run build",
+  "deploy": "gh-pages -d build",
   "version": "0.0.0",
   "type": "module",
   "scripts": {
