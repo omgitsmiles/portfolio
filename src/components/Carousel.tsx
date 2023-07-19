@@ -4,16 +4,13 @@ import {
   IconButton,
   useBreakpointValue,
   Stack,
-  Heading,
-  Text,
   Link,
   Button,
   Stat,
   StatLabel,
   StatNumber,
   useColorModeValue,
-  Container,
-  filter,
+  Container
 } from '@chakra-ui/react';
 // Here we have used react-icons package for the icons
 import { BiLeftArrowAlt, BiRightArrowAlt } from 'react-icons/bi';
@@ -89,7 +86,7 @@ export default function CaptionCarousel() {
         text:
           "Landing page for AfterFlea, a mobile application that allows users to buy and sell items locally.",
         image: `${af}`,
-        repo: "https://github.com/omgitsmiles/Ullr"
+        repo: "https://github.com/omgitsmiles/"
       }
   ];
 
@@ -116,7 +113,7 @@ export default function CaptionCarousel() {
         <Button
           bg={'teal.300'}
           rounded={'full'}
-          color={'whiteAlpha.700'}
+          color={'white.700'}
           _hover={{ bg: 'teal.500' }}>
           Github Repo
         </Button>
@@ -189,7 +186,7 @@ export default function CaptionCarousel() {
                 position="absolute"
                 top="50%"
                 transform="translate(0, -50%)">
-                <StatsCard title={card.title} stat={card.text} repo={card.repo}/>
+                <StatsCard repo={card.repo} title={card.title} stat={card.text}/>
               </Stack>
             </Container>
           </Box>
