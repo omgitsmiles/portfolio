@@ -1,7 +1,7 @@
 {
   "name": "portfolio",
   "private": false,
-  "homepage": "https://omgitsmiles.github.io/portfolio/",
+  "homepage": "http://omgitsmiles.github.io/portfolio/",
   "version": "0.0.0",
   "type": "module",
   "scripts": {
