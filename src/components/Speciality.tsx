@@ -10,7 +10,7 @@ import {
   } from '@chakra-ui/react';
   import { ReactNode } from 'react';
   import { MdOutlineDesignServices } from 'react-icons/md';
-  import { FcEngineering } from 'react-icons/fc';
+  import { PiGearSixBold } from 'react-icons/pi';
   import { PiFigmaLogoBold } from 'react-icons/pi';
 
   interface StatsCardProps {
@@ -68,7 +68,7 @@ import {
           <StatsCard
             title={'Back End Development'}
             stat={'Ruby on Rails, Python, Java, PostgreSQL'}
-            icon={<FcEngineering size={'3em'} />}
+            icon={<PiGearSixBold size={'3em'} />}
           />
           <StatsCard
             title={'UI/UX Design'}
