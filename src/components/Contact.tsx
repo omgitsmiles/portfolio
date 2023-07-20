@@ -51,14 +51,35 @@ import {
     }
     
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-      e.preventDefault();
-      console.log(contactForm);
+      e.preventDefault()
+      console.log(contactForm)
+      fetch('https://api.emailjs.com/api/v1.0/email/send', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          service_id: 'service_0jxxrhs',
+          template_id: 'template_fbl5dqs',
+          user_id: 'HvfXvJyBpl4yDMVsO',
+          template_params: {
+            from_name: contactForm.name,
+            from_email: contactForm.email,
+            message: contactForm.message,
+          },
+        })
+      })
       toast({
         title: 'email sent!',
         description: "I'll be in touch! Thanks for reaching out.",
         status: 'success',
         duration: 9000,
         isClosable: true,
+      })
+      setContactForm({
+        name: '',
+        email: '',
+        message: '',
       })
     }
 
