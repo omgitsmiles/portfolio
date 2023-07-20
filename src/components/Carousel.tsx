@@ -115,7 +115,7 @@ export default function CaptionCarousel() {
           rounded={'full'}
           color={'white.700'}
           _hover={{ bg: 'teal.500' }}>
-          Github Repo
+          My Github
         </Button>
         </Link>
       </Stat>
