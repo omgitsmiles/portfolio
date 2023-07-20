@@ -47,7 +47,7 @@ export default function Nav() {
               <Button onClick={toggleColorMode}>
                 {colorMode === 'light' ? <MoonIcon /> : <SunIcon />}
               </Button>
-
+{/* 
               <Menu>
                 <MenuButton
                   as={Button}
@@ -77,13 +77,16 @@ export default function Nav() {
                   <MenuItem>My Projects</MenuItem>
                   <MenuItem>About Me</MenuItem>
                   {/* figure out link problem between roouter vs chakra ui */}
-                  <MenuItem>Contact</MenuItem>
+                  {/* <MenuItem>Contact</MenuItem>
                 </MenuList>
-              </Menu>
-            </Stack>
+              </Menu> */} 
+            {/* </Stack> */}
+          {/* </Flex> */}
+          </Stack>
           </Flex>
         </Flex>
       </Box>
     </>
+
   );
 }
