@@ -20,3 +20,9 @@ const App = () => {
 }
 
 export default App
+
+
+// <Route exact path='/parker-portfolio-site/' element={<Hero/>}/>
+{/* <Route path="/parker-portfolio-site/about" element={<About/>}/>
+<Route path="/parker-portfolio-site/projects" element={<Projects/>}/>
+<Route path="/parker-portfolio-site/contact" element={<ContactMe/>}/> */}
