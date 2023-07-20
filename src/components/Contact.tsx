@@ -46,7 +46,7 @@ import {
     })
     const toast = useToast()
 
-    const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement> | React.ChangeEvent<HTMLTextAreaElement>) => {
       setContactForm({ ...contactForm, [e.target.name]: e.target.value })
     }
     

@@ -1,21 +1,21 @@
 import {
   Box,
   Flex,
-  Avatar,
+  // Avatar,
   Button,
-  Menu,
-  MenuButton,
-  MenuList,
-  MenuItem,
-  MenuDivider,
+  // Menu,
+  // MenuButton,
+  // MenuList,
+  // MenuItem,
+  // MenuDivider,
   useColorModeValue,
   Stack,
   useColorMode,
-  Center,
+  // Center,
 } from '@chakra-ui/react';
 // import { Link } from 'react-router-dom';
 import { SiAltiumdesigner } from 'react-icons/si' 
-import avatar from '../assets/paoloavatar.jpeg'
+// import avatar from '../assets/paoloavatar.jpeg'
 import { MoonIcon, SunIcon } from '@chakra-ui/icons';
 
 // const NavLink = ({ children }: { children: ReactNode }) => (
