@@ -52,7 +52,8 @@ import {
     
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
       e.preventDefault()
-      console.log(contactForm)
+      const form = e.target as HTMLFormElement
+      form.reset()
       fetch('https://api.emailjs.com/api/v1.0/email/send', {
         method: 'POST',
         headers: {
