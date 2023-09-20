@@ -62,12 +62,12 @@ import {
         <SimpleGrid columns={{ base: 1, md: 3 }} spacing={{ base: 5, lg: 8 }}>
           <StatsCard
             title={'Front End Development'}
-            stat={'React.js, TypeScript, Javascript, HTML, CSS'}
+            stat={'React.js, TypeScript, Javascript, React Native, HTML, CSS'}
             icon={<MdOutlineDesignServices size={'3em'} />}
           />
           <StatsCard
             title={'Back End Development'}
-            stat={'Ruby on Rails, Python, Java, PostgreSQL'}
+            stat={'Ruby on Rails, Python, Flask, Node.js PostgreSQL'}
             icon={<PiGearSixBold size={'3em'} />}
           />
           <StatsCard
